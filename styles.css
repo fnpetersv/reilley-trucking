@@ -310,7 +310,7 @@ input:focus, select:focus, textarea:focus {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 250px;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
@@ -336,15 +336,23 @@ input:focus, select:focus, textarea:focus {
   .nav a:last-child {
     border-bottom: none;
     margin-top: 1rem;
+    border: none !important;
+    background: var(--red) !important;
+    color: var(--white) !important;
   }
   
   /* Header adjustments */
   .header-inner {
     padding: 0.5rem 0;
+    position: relative;
+    z-index: 1002;
   }
   
   .brand img.logo {
     height: 70px;
+    position: relative;
+    z-index: 1003;
+    margin-top: 0.5rem;
   }
   
   /* Top bar mobile */
