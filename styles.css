@@ -111,7 +111,7 @@ body {
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav.open { position: absolute; inset: 60px 0 auto 0; background: var(--white); padding: 1rem; flex-direction: column; box-shadow: var(--shadow); }
+.nav.open { position: absolute; inset: 94px 0 auto 0; background: var(--white); padding: 1rem; flex-direction: column; box-shadow: var(--shadow); }
 
 /* Hero */
 .hero {
