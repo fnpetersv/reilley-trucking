@@ -22,6 +22,11 @@
     <a class="brand" href="#">
       <img src="assets/logo.png" alt="Reilley Trucking Logo" class="logo" />
     </a>
+<button class="hamburger" aria-label="Toggle navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 <nav class="nav">
   <a href="services.html">Services</a>
   <a href="careers.html">Careers</a>
@@ -234,6 +239,15 @@
     hamburger?.addEventListener('click', () => {
       nav.classList.toggle('open');
       hamburger.classList.toggle('open');
+    });
+    
+    // Close mobile nav when clicking on a link
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
     });
   </script>
 </body>

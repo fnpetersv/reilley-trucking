@@ -254,4 +254,339 @@ input:focus, select:focus, textarea:focus {
   background: #fff;
   padding: 1.25rem;
   border-radius: var(--radius);
-  box-shadow
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--text);
+  color: var(--white);
+  padding: 2rem 0 1rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.footer-links a:hover { opacity: 1; }
+.footer-copy {
+  text-align: right;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Careers CTA */
+.careers-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 5rem 2rem 2rem;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav.open {
+    right: 0;
+  }
+  
+  .nav a {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .nav a:last-child {
+    border-bottom: none;
+    margin-top: 1rem;
+  }
+  
+  /* Header adjustments */
+  .header-inner {
+    padding: 0.5rem 0;
+  }
+  
+  .brand img.logo {
+    height: 70px;
+  }
+  
+  /* Top bar mobile */
+  .topbar .container {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  
+  .topbar-contact {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Layout Adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  
+  .section {
+    padding: 2rem 0;
+  }
+  
+  /* Hero mobile */
+  .hero {
+    min-height: 50vh;
+  }
+  
+  .hero-content {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero p {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-ctas {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .hero-ctas .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Badges mobile */
+  .badges-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+  
+  .badge {
+    padding: 0.75rem;
+  }
+  
+  /* Cards mobile */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+  
+  /* Form mobile */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .form {
+    padding: 1rem;
+  }
+  
+  /* About grid mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  /* Contact grid mobile */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .map-embed iframe {
+    height: 250px;
+  }
+  
+  /* Footer mobile */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer-copy {
+    text-align: center;
+  }
+  
+  /* Careers CTA mobile */
+  .careers-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .careers-cta .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+  }
+  
+  .section {
+    padding: 1.5rem 0;
+  }
+  
+  .hero {
+    min-height: 45vh;
+  }
+  
+  .hero-content {
+    padding: 1.5rem 0;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.3rem, 7vw, 2rem);
+  }
+  
+  .hero p {
+    font-size: clamp(0.85rem, 4vw, 1rem);
+  }
+  
+  .section-header h2 {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+  }
+  
+  .card-body {
+    padding: 0.75rem;
+  }
+  
+  .card img {
+    height: 160px;
+  }
+  
+  .form {
+    padding: 0.75rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .contact-card {
+    padding: 1rem;
+  }
+  
+  .map-embed iframe {
+    height: 200px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 40vh;
+  }
+  
+  .hero-content {
+    padding: 1.5rem 0;
+  }
+  
+  .nav {
+    width: 250px;
+  }
+}
+
+/* Touch improvements */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .brand img.logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
