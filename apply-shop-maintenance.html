@@ -59,7 +59,7 @@
       <form class="form" action="https://formsubmit.co/6df8457cea312a3e7a51a5e2a7d94f82" method="POST">
         <input type="hidden" name="_subject" value="New Shop Maintenance Application - Reilley Trucking">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="">
+        <input type="hidden" name="_next" id="next-url-maintenance" value="">
         <!-- Personal Information -->
         <div class="form-row">
           <div class="form-field full">
@@ -433,6 +433,9 @@
   </footer>
   
   <script>
+    // Set redirect URL for form submission
+    document.getElementById('next-url-maintenance').value = window.location.origin + '/thank-you.html';
+    
     // Mobile nav toggle (simple, no framework)
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
