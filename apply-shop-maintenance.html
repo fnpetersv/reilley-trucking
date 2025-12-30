@@ -52,16 +52,361 @@
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Application Form</h2>
-        <p>Please fill out the form below to apply for the Shop Maintenance position.</p>
+        <h2 style="text-align: center;">Reilley Trucking Shop Maintenance Application</h2>
+        <p style="text-align: center;">Thank you for your interest in working for Reilley Trucking INC. Please fill out the application below.</p>
       </div>
       
-      <!-- Form will be added here -->
-      <div class="form">
-        <p style="text-align: center; color: var(--muted); padding: 2rem;">
-          Application form will be added here.
-        </p>
-      </div>
+      <form class="form" action="#" method="post">
+        <!-- Personal Information -->
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="name">Name <span style="color: var(--red);">*</span></label>
+            <input type="text" id="name" name="name" required />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="address">Address <span style="color: var(--red);">*</span></label>
+            <input type="text" id="address" name="address" placeholder="Address Line 1" required />
+            <input type="text" id="address2" name="address2" placeholder="Address Line 2" style="margin-top: 0.5rem;" />
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+              <input type="text" id="city" name="city" placeholder="City" required />
+              <input type="text" id="state" name="state" placeholder="State" required />
+              <input type="text" id="zip" name="zip" placeholder="ZIP Code" required />
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="form-field">
+            <label for="dob">Date of Birth <span style="color: var(--red);">*</span></label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+          <div class="form-field">
+            <label for="ssn">Social Security Number</label>
+            <input type="text" id="ssn" name="ssn" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field">
+            <label for="phone">Phone Number <span style="color: var(--red);">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="(260) 555-1234" required />
+          </div>
+          <div class="form-field">
+            <label for="cell">Cell Phone Number</label>
+            <input type="tel" id="cell" name="cell" placeholder="(260) 555-1234" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="additional-addresses">List any additional addresses you have lived at in the last 3 years</label>
+            <textarea id="additional-addresses" name="additional-addresses" rows="3"></textarea>
+          </div>
+        </div>
+        
+        <!-- ID/License Information -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--red);">
+          <h3 style="margin-bottom: 1rem; color: var(--red);">ID or License Information</h3>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label for="id-state">ID or DL Issuing State <span style="color: var(--red);">*</span></label>
+              <select id="id-state" name="id-state" required>
+                <option value="">Select State</option>
+                <option value="NO CURRENT LICENSE OR ID">NO CURRENT LICENSE OR ID</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="license-number">License Number</label>
+              <input type="text" id="license-number" name="license-number" />
+            </div>
+            <div class="form-field">
+              <label for="license-expiration">Expiration Date</label>
+              <input type="date" id="license-expiration" name="license-expiration" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Employment Record -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--red);">
+          <h3 style="margin-bottom: 1rem; color: var(--red);">Employment Record</h3>
+          
+          <!-- Last Employer -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="margin-bottom: 0.75rem;">Last Employer</h4>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-1-name">Employer</label>
+                <input type="text" id="employer-1-name" name="employer-1-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-1-address">Address</label>
+                <input type="text" id="employer-1-address" name="employer-1-address" placeholder="Address Line 1" />
+                <input type="text" id="employer-1-address2" name="employer-1-address2" placeholder="Address Line 2" style="margin-top: 0.5rem;" />
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                  <input type="text" id="employer-1-city" name="employer-1-city" placeholder="City" />
+                  <input type="text" id="employer-1-state" name="employer-1-state" placeholder="State" />
+                  <input type="text" id="employer-1-zip" name="employer-1-zip" placeholder="ZIP Code" />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-1-phone">Phone Number</label>
+                <input type="tel" id="employer-1-phone" name="employer-1-phone" />
+              </div>
+              <div class="form-field">
+                <label for="employer-1-position">Position Held</label>
+                <input type="text" id="employer-1-position" name="employer-1-position" />
+              </div>
+              <div class="form-field">
+                <label for="employer-1-salary">Salary</label>
+                <input type="text" id="employer-1-salary" name="employer-1-salary" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-1-from">From</label>
+                <input type="date" id="employer-1-from" name="employer-1-from" />
+              </div>
+              <div class="form-field">
+                <label for="employer-1-to">To</label>
+                <input type="date" id="employer-1-to" name="employer-1-to" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-1-reason">Reason for Leaving</label>
+                <textarea id="employer-1-reason" name="employer-1-reason" rows="2"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-1-gaps">ANY GAPS IN EMPLOYMENT AND/OR UNEMPLOYMENT MUST BE EXPLAINED. INCLUDE DATES AND REASON.</label>
+                <textarea id="employer-1-gaps" name="employer-1-gaps" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Second Last Employer -->
+          <div style="margin-bottom: 2rem; padding-top: 1.5rem; border-top: 1px solid #e2e2e6;">
+            <h4 style="margin-bottom: 0.75rem;">Second Last Employer</h4>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-2-name">Employer</label>
+                <input type="text" id="employer-2-name" name="employer-2-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-2-address">Address</label>
+                <input type="text" id="employer-2-address" name="employer-2-address" placeholder="Address Line 1" />
+                <input type="text" id="employer-2-address2" name="employer-2-address2" placeholder="Address Line 2" style="margin-top: 0.5rem;" />
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                  <input type="text" id="employer-2-city" name="employer-2-city" placeholder="City" />
+                  <input type="text" id="employer-2-state" name="employer-2-state" placeholder="State" />
+                  <input type="text" id="employer-2-zip" name="employer-2-zip" placeholder="ZIP Code" />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-2-phone">Phone Number</label>
+                <input type="tel" id="employer-2-phone" name="employer-2-phone" />
+              </div>
+              <div class="form-field">
+                <label for="employer-2-position">Position Held</label>
+                <input type="text" id="employer-2-position" name="employer-2-position" />
+              </div>
+              <div class="form-field">
+                <label for="employer-2-salary">Salary</label>
+                <input type="text" id="employer-2-salary" name="employer-2-salary" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-2-from">From</label>
+                <input type="date" id="employer-2-from" name="employer-2-from" />
+              </div>
+              <div class="form-field">
+                <label for="employer-2-to">To</label>
+                <input type="date" id="employer-2-to" name="employer-2-to" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-2-reason">Reason for Leaving</label>
+                <textarea id="employer-2-reason" name="employer-2-reason" rows="2"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-2-gaps">ANY GAPS IN EMPLOYMENT AND/OR UNEMPLOYMENT MUST BE EXPLAINED. INCLUDE DATES AND REASON.</label>
+                <textarea id="employer-2-gaps" name="employer-2-gaps" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Third Last Employer -->
+          <div style="margin-bottom: 2rem; padding-top: 1.5rem; border-top: 1px solid #e2e2e6;">
+            <h4 style="margin-bottom: 0.75rem;">Third Last Employer</h4>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-3-name">Employer</label>
+                <input type="text" id="employer-3-name" name="employer-3-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-3-address">Address</label>
+                <input type="text" id="employer-3-address" name="employer-3-address" placeholder="Address Line 1" />
+                <input type="text" id="employer-3-address2" name="employer-3-address2" placeholder="Address Line 2" style="margin-top: 0.5rem;" />
+                <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                  <input type="text" id="employer-3-city" name="employer-3-city" placeholder="City" />
+                  <input type="text" id="employer-3-state" name="employer-3-state" placeholder="State" />
+                  <input type="text" id="employer-3-zip" name="employer-3-zip" placeholder="ZIP Code" />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-3-phone">Phone Number</label>
+                <input type="tel" id="employer-3-phone" name="employer-3-phone" />
+              </div>
+              <div class="form-field">
+                <label for="employer-3-position">Position Held</label>
+                <input type="text" id="employer-3-position" name="employer-3-position" />
+              </div>
+              <div class="form-field">
+                <label for="employer-3-salary">Salary</label>
+                <input type="text" id="employer-3-salary" name="employer-3-salary" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="employer-3-from">From</label>
+                <input type="date" id="employer-3-from" name="employer-3-from" />
+              </div>
+              <div class="form-field">
+                <label for="employer-3-to">To</label>
+                <input type="date" id="employer-3-to" name="employer-3-to" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-3-reason">Reason for Leaving</label>
+                <textarea id="employer-3-reason" name="employer-3-reason" rows="2"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full">
+                <label for="employer-3-gaps">ANY GAPS IN EMPLOYMENT AND/OR UNEMPLOYMENT MUST BE EXPLAINED. INCLUDE DATES AND REASON.</label>
+                <textarea id="employer-3-gaps" name="employer-3-gaps" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Conviction Question -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--red);">
+          <div class="form-row">
+            <div class="form-field full">
+              <label for="convictions">In the Last 7 Years, Have You Been Convicted of Any Misdemeanor or Felony Offense? If So, Please Give Dates and Nature of Offense(s). <span style="color: var(--red);">*</span></label>
+              <textarea id="convictions" name="convictions" rows="4" required></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Authorization and Signature -->
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--red);">
+          <h3 style="margin-bottom: 1rem; color: var(--red);">TO BE READ AND DIGITALLY SIGNED BY APPLICANT</h3>
+          
+          <div style="background: #f7f7f8; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+            <p style="margin: 0; line-height: 1.8;">
+              I authorize you to make such investigations and inquiries to my personal, employment, financial, or medical history and other related matter as may be necessary in arriving at an employment decision. (Generally, inquiries regarding medical history will be made, only if and after a conditional offer of employment has been extended.) I hereby release employers, schools, health care providers and other persons from all liability in responding to inquiries and releasing information in connection with my application. In the event of employment, I understand that false or misleading information given in my application or interview(s) may result in discharge. I understand, also, that I am required to abide by all rules and regulations of Reilley Trucking. I understand that information I provide regarding current and/or previous employers may be used, and those employer(s) will be contacted, for the purpose of investigating my safety performance history as required by 49 CFR 391.23(d) and (e). I understand that I have the right to 1. Review information provided by current/previous employers 2. Have errors in the information corrected by previous employers and for those previous employers to re-send the corrected information to the prospective employer and; 3. Have a rebuttal statement attached to the alleged erroneous information if the previous employer(s) and I cannot agree on the accuracy of this information.
+            </p>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-field">
+              <label for="auth-date">DATE <span style="color: var(--red);">*</span></label>
+              <input type="date" id="auth-date" name="auth-date" required />
+            </div>
+            <div class="form-field">
+              <label for="auth-signature">DIGITALLY SIGN BY TYPING FULL LEGAL NAME <span style="color: var(--red);">*</span></label>
+              <input type="text" id="auth-signature" name="auth-signature" required />
+            </div>
+          </div>
+          
+          <div style="background: #f7f7f8; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+            <p style="margin: 0; line-height: 1.8;">
+              This Certifies that I completed this application, and that all entries on it and information in it are true and complete to the best of my knowledge.
+            </p>
+          </div>
+        </div>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+          <button type="submit" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Submit Application</button>
+        </div>
+      </form>
     </div>
   </section>
 
