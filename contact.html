@@ -79,24 +79,27 @@
         <h2>Send Us a Message</h2>
         <p>We’ll get back to you as soon as possible.</p>
       </div>
-      <form class="form">
+      <form class="form" action="https://formsubmit.co/Nellyp7@aol.com" method="POST">
+        <input type="hidden" name="_subject" value="New Contact Form Submission - Reilley Trucking">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="">
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" />
+            <input type="text" id="name" name="name" placeholder="Your name" required />
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="you@example.com" />
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
           </div>
           <div class="form-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" placeholder="(555) 555-5555" />
+            <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" />
           </div>
         </div>
         <div class="form-field full">
           <label for="message">Message</label>
-          <textarea id="message" rows="5" placeholder="How can we help?"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
