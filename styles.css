@@ -1,6 +1,6 @@
 /* Brand palette */
 :root {
-  --red: #990000;
+  --red: #d61133;
   --red-dark: #7f0000;
   --red-light: #b30000;
   --bg: #f7f7f8;
@@ -64,10 +64,11 @@ body {
   padding: 0.2rem 0;   /* tightened vertical padding */
 }
 .brand img.logo {
-  height: 100px;       /* doubled size */
+  height: 70px;
   width: auto;
   display: block;
-  margin: 0;           /* remove extra spacing */
+  margin: 0;
+  padding: 0.5rem 0;   /* padding on top and bottom only */
 }
 .nav {
   display: flex;
