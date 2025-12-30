@@ -184,7 +184,7 @@ body {
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 .card {
   background: #fff;
@@ -207,6 +207,128 @@ body {
 .card-body p { color: var(--muted); margin: 0 0 0.75rem; }
 .list { padding-left: 1rem; margin: 0; }
 .list li { margin: 0.25rem 0; }
+
+/* Service Cards with Hover Overlay */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.service-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  height: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.service-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .service-card-image img {
+  transform: scale(1.1);
+}
+.service-card-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: 3;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.service-card:hover .service-card-title {
+  opacity: 0;
+}
+.service-card-title h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  margin: 0;
+  color: var(--white);
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.2;
+}
+.service-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.95) 100%);
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.service-card:hover .service-card-overlay {
+  opacity: 1;
+}
+.service-card-content {
+  color: var(--white);
+  text-align: center;
+  width: 100%;
+}
+.service-card-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 1rem;
+  color: var(--white);
+}
+.service-card-intro {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+.service-card-details {
+  display: grid;
+  gap: 1.25rem;
+  text-align: left;
+}
+.service-card-details > div {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+.service-card-details h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: var(--red);
+  font-weight: 600;
+}
+.service-card-details .list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: rgba(255,255,255,0.9);
+}
+.service-card-details .list li {
+  margin: 0.35rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
 
 /* Form */
 .form {
@@ -459,6 +581,43 @@ input[type="radio"], input[type="checkbox"] {
     height: 234px; /* 30% taller than 180px */
   }
   
+  /* Service cards mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .service-card {
+    height: 400px;
+  }
+  .service-card-title {
+    padding: 1.25rem;
+  }
+  .service-card-title h2 {
+    font-size: 1.3rem;
+  }
+  .service-card-overlay {
+    padding: 1.5rem;
+  }
+  .service-card-content h2 {
+    font-size: 1.5rem;
+  }
+  .service-card-intro {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .service-card-details {
+    gap: 1rem;
+  }
+  .service-card-details > div {
+    padding: 0.75rem;
+  }
+  .service-card-details h3 {
+    font-size: 0.9rem;
+  }
+  .service-card-details .list {
+    font-size: 0.85rem;
+  }
+  
   /* Form mobile */
   .form-row {
     grid-template-columns: 1fr;
@@ -637,6 +796,14 @@ input[type="radio"], input[type="checkbox"] {
   
   input, select, textarea {
     min-height: 44px;
+  }
+  
+  /* Service cards on touch devices - show overlay on tap */
+  .service-card-overlay {
+    opacity: 0.95;
+  }
+  .service-card:active .service-card-overlay {
+    opacity: 1;
   }
 }
 
