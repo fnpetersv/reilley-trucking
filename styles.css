@@ -235,6 +235,28 @@ input:focus, select:focus, textarea:focus {
   outline: 2px solid #ffe3e3;
   border-color: var(--red);
 }
+.form h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--red);
+  font-weight: 700;
+}
+.form h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+  font-weight: 600;
+}
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.form button[type="submit"] {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
 
 /* About */
 .about-grid {
@@ -537,6 +559,22 @@ input:focus, select:focus, textarea:focus {
   
   .form {
     padding: 0.75rem;
+  }
+  
+  .form h3 {
+    font-size: 1.1rem;
+  }
+  
+  .form h4 {
+    font-size: 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
   }
   
   .btn {

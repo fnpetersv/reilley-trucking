@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply for Shop Maintenance Position | Reilley Trucking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>Serving the Midwest since 1978</span>
+      <span class="topbar-contact">Call (260) 478-2002</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Reilley Trucking Logo" class="logo" />
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <a href="services.html">Services</a>
+        <a href="careers.html">Careers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="btn btn-sm btn-outline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="assets/mechanic.JPG" alt="Shop Maintenance position" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Apply for Shop Maintenance Position</h1>
+      <p>Help keep our facility and equipment in top condition.</p>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Application Form</h2>
+        <p>Please fill out the form below to apply for the Shop Maintenance position.</p>
+      </div>
+      
+      <!-- Form will be added here -->
+      <div class="form">
+        <p style="text-align: center; color: var(--muted); padding: 2rem;">
+          Application form will be added here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Reilley Trucking</strong>
+        <p>Reliable. Responsive. Reilley.</p>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="careers.html">Careers</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-copy">
+        <span>© 2025 Reilley Trucking. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Mobile nav toggle (simple, no framework)
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    hamburger?.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    
+    // Close mobile nav when clicking on a link
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
+
