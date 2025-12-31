@@ -235,11 +235,18 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
+.careers-cards .card {
+  display: flex;
+  flex-direction: column;
+}
 .careers-cards .card img {
   height: 140px;
 }
 .careers-cards .card-body {
   padding: 0.75rem 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .careers-cards .card-body h3 {
   font-size: 1.1rem;
@@ -255,6 +262,9 @@ body {
 .careers-cards .card-body .btn {
   padding: 0.6rem 0.9rem;
   font-size: 0.9rem;
+  margin-top: auto;
+  display: inline-block;
+  align-self: flex-start;
 }
 
 /* Tablet - careers cards show 2 columns */
