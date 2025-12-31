@@ -230,6 +230,40 @@ body {
   gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);
 }
+/* Careers cards - 4 columns, smaller size */
+.careers-cards {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.careers-cards .card img {
+  height: 140px;
+}
+.careers-cards .card-body {
+  padding: 0.75rem 0.75rem 1rem;
+}
+.careers-cards .card-body h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+.careers-cards .card-body .list {
+  font-size: 0.9rem;
+  padding-left: 0.875rem;
+}
+.careers-cards .card-body .list li {
+  margin: 0.2rem 0;
+}
+.careers-cards .card-body .btn {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+/* Tablet - careers cards show 2 columns */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .careers-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
 .card {
   background: #fff;
   border-radius: var(--radius);
@@ -785,6 +819,11 @@ input[type="radio"], input[type="checkbox"] {
 
   /* Cards mobile */
   .cards {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .careers-cards {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
