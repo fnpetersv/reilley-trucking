@@ -121,6 +121,68 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="testimonials-background">
+      <img src="assets/hero-truck.JPG" alt="Reilley Trucking fleet" />
+      <div class="testimonials-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="section-header testimonials-header">
+        <h2>What our clients say</h2>
+        <p>Trusted by contractors and businesses across the Midwest</p>
+      </div>
+      <div class="testimonials-carousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-initials">JD</div>
+            <p class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
+            <div class="testimonial-author">John Davis</div>
+            <div class="testimonial-role">Construction Manager</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">SM</div>
+            <p class="testimonial-text">"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <div class="testimonial-author">Sarah Martinez</div>
+            <div class="testimonial-role">Project Coordinator</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">RW</div>
+            <p class="testimonial-text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."</p>
+            <div class="testimonial-author">Robert Wilson</div>
+            <div class="testimonial-role">Site Supervisor</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">EJ</div>
+            <p class="testimonial-text">"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."</p>
+            <div class="testimonial-author">Emily Johnson</div>
+            <div class="testimonial-role">Operations Director</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">MB</div>
+            <p class="testimonial-text">"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."</p>
+            <div class="testimonial-author">Michael Brown</div>
+            <div class="testimonial-role">General Contractor</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">LT</div>
+            <p class="testimonial-text">"Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque."</p>
+            <div class="testimonial-author">Lisa Thompson</div>
+            <div class="testimonial-role">Facilities Manager</div>
+          </div>
+        </div>
+        <div class="testimonials-dots">
+          <button class="dot active" data-index="0" aria-label="Show testimonial 1"></button>
+          <button class="dot" data-index="1" aria-label="Show testimonial 2"></button>
+          <button class="dot" data-index="2" aria-label="Show testimonial 3"></button>
+          <button class="dot" data-index="3" aria-label="Show testimonial 4"></button>
+          <button class="dot" data-index="4" aria-label="Show testimonial 5"></button>
+          <button class="dot" data-index="5" aria-label="Show testimonial 6"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Quote form -->
   <section id="quote" class="section section-alt">
     <div class="container">
@@ -255,6 +317,62 @@
         hamburger.classList.remove('open');
       });
     });
+
+    // Testimonials carousel
+    (function() {
+      const track = document.getElementById('testimonialsTrack');
+      const dots = document.querySelectorAll('.testimonials-dots .dot');
+      let currentIndex = 0;
+      const totalTestimonials = 6;
+      let autoRotateInterval;
+
+      function showTestimonial(index) {
+        if (!track) return;
+        currentIndex = index;
+        // Each card is 1/6 of the track width, so translate by 16.666% for each step
+        const translatePercent = (currentIndex * 100) / 6;
+        track.style.transform = `translateX(-${translatePercent}%)`;
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function nextTestimonial() {
+        currentIndex = (currentIndex + 1) % totalTestimonials;
+        showTestimonial(currentIndex);
+      }
+
+      function startAutoRotate() {
+        autoRotateInterval = setInterval(nextTestimonial, 10000); // Rotate every 10 seconds
+      }
+
+      function stopAutoRotate() {
+        if (autoRotateInterval) {
+          clearInterval(autoRotateInterval);
+        }
+      }
+
+      // Dot click handlers
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          stopAutoRotate();
+          showTestimonial(index);
+          startAutoRotate();
+        });
+      });
+
+      // Pause on hover
+      const carousel = document.querySelector('.testimonials-carousel');
+      if (carousel) {
+        carousel.addEventListener('mouseenter', stopAutoRotate);
+        carousel.addEventListener('mouseleave', startAutoRotate);
+      }
+
+      // Start auto-rotation
+      startAutoRotate();
+    })();
   </script>
 </body>
 </html>
