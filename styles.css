@@ -170,6 +170,50 @@ body {
 }
 .badge strong { color: var(--red); display: block; }
 
+/* Why Choose Reilley */
+.why-choose-section {
+  background: var(--white);
+}
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.why-choose-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.why-choose-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.why-choose-icon {
+  color: var(--red);
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(205, 0, 0, 0.08);
+  border-radius: 50%;
+}
+.why-choose-item h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  font-weight: 700;
+}
+.why-choose-item p {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* Section header */
 .section-header h2 {
   font-size: clamp(1.6rem, 3vw, 2rem);
@@ -708,11 +752,37 @@ input[type="radio"], input[type="checkbox"] {
     gap: 0.75rem;
     padding: 1rem 0;
   }
-  
+
   .badge {
     padding: 0.75rem;
   }
-  
+
+  /* Why Choose mobile */
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .why-choose-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .why-choose-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.25rem;
+  }
+
+  .why-choose-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .why-choose-item h3 {
+    font-size: 1.2rem;
+  }
+
   /* Cards mobile */
   .cards {
     grid-template-columns: 1fr;
