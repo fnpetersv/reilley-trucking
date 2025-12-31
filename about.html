@@ -75,8 +75,19 @@
         <p>Reilley Trucking has been part of the Fort Wayne community for over 50 years. Supporting local families, schools, and events is part of who we are. From youth sports to charity events to hands‑on experiences for kids, we're proud to invest in the people and places that make our community strong.</p>
       </div>
       <div class="community-grid">
-        <div class="community-item">
-          <img src="assets/community-1.jpg" alt="Little League and softball team sponsorships" />
+        <div class="community-item community-slider">
+          <div class="community-slider-container">
+            <div class="community-slider-track" id="littleLeagueSlider">
+              <img src="assets/community-1.jpg" alt="Little League and softball team sponsorships" />
+              <img src="assets/community-1b.jpg" alt="Little League and softball team sponsorships" />
+              <img src="assets/community-1c.jpg" alt="Little League and softball team sponsorships" />
+            </div>
+          </div>
+          <div class="community-slider-controls">
+            <button class="community-slider-btn community-slider-prev" aria-label="Previous image">‹</button>
+            <button class="community-slider-btn community-slider-next" aria-label="Next image">›</button>
+          </div>
+          <div class="community-slider-dots"></div>
           <p class="community-caption">Little League and softball team sponsorships</p>
         </div>
         <div class="community-item">
@@ -161,6 +172,56 @@
         hamburger.classList.remove('open');
       });
     });
+
+    // Little League slider
+    (function() {
+      const slider = document.getElementById('littleLeagueSlider');
+      const prevBtn = document.querySelector('.community-slider-prev');
+      const nextBtn = document.querySelector('.community-slider-next');
+      const dotsContainer = document.querySelector('.community-slider-dots');
+      
+      if (!slider) return;
+      
+      const images = slider.querySelectorAll('img');
+      const totalImages = images.length;
+      let currentIndex = 0;
+      
+      // Create dots
+      images.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'community-slider-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to image ${index + 1}`);
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+      
+      const dots = dotsContainer.querySelectorAll('.community-slider-dot');
+      
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+      
+      function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+      }
+      
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateSlider();
+      }
+      
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateSlider();
+      }
+      
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    })();
   </script>
 </body>
 </html>
