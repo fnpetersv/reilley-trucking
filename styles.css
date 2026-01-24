@@ -35,6 +35,53 @@ body {
   box-shadow: var(--shadow);
 }
 
+/* Why work with us (careers) - background image + red overlay */
+.why-work-section {
+  position: relative;
+  color: var(--white);
+  overflow: hidden;
+  padding: 4rem 0;
+}
+.why-work-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.why-work-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.why-work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.84);
+  z-index: 1;
+}
+.why-work-section .container {
+  position: relative;
+  z-index: 2;
+}
+.why-work-section .section-header h2 {
+  color: var(--white);
+}
+.why-work-section .section-header p {
+  color: rgba(255, 255, 255, 0.95);
+}
+.why-work-list {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.05rem;
+  max-width: 40rem;
+}
+.why-work-list li {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+.why-work-list li::marker {
+  color: var(--white);
+}
+
 /* Top bar */
 .topbar {
   background: var(--red);
@@ -1155,6 +1202,14 @@ input[type="radio"], input[type="checkbox"] {
     text-align: center;
   }
   
+  /* Why work with us mobile */
+  .why-work-section {
+    padding: 2.5rem 0;
+  }
+  .why-work-list {
+    font-size: 1rem;
+  }
+
   /* Careers CTA mobile */
   .careers-cta {
     flex-direction: column;
