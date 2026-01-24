@@ -719,6 +719,13 @@ input[type="radio"], input[type="checkbox"] {
   margin-top: 1.5rem;
 }
 
+/* Stack heading above paragraph on careers page Application CTA */
+.careers-cta:has(> h2) {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 /* Testimonials */
 .testimonials-section {
   position: relative;
