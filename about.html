@@ -90,12 +90,32 @@
           <div class="community-slider-dots"></div>
           <p class="community-caption">Little League and softball team sponsorships</p>
         </div>
-        <div class="community-item">
-          <img src="assets/kidtruck.jpg" alt="Touch‑A‑Truck events for kids" />
+        <div class="community-item community-slider">
+          <div class="community-slider-container">
+            <div class="community-slider-track" id="touchATruckSlider">
+              <img src="assets/kidtruck.jpg" alt="Touch‑A‑Truck events for kids" />
+              <img src="assets/kidintruck.jpg" alt="Touch‑A‑Truck events for kids" />
+            </div>
+          </div>
+          <div class="community-slider-controls">
+            <button class="community-slider-btn community-slider-prev" aria-label="Previous image">‹</button>
+            <button class="community-slider-btn community-slider-next" aria-label="Next image">›</button>
+          </div>
+          <div class="community-slider-dots"></div>
           <p class="community-caption">Touch‑A‑Truck events for kids</p>
         </div>
-        <div class="community-item">
-          <img src="assets/monster truck.jpg" alt="Monster truck sponsorship" />
+        <div class="community-item community-slider">
+          <div class="community-slider-container">
+            <div class="community-slider-track" id="monsterTruckSlider">
+              <img src="assets/monster truck.jpg" alt="Monster truck sponsorship" />
+              <img src="assets/Monstertruckshow.jpg" alt="Monster truck sponsorship" />
+            </div>
+          </div>
+          <div class="community-slider-controls">
+            <button class="community-slider-btn community-slider-prev" aria-label="Previous image">‹</button>
+            <button class="community-slider-btn community-slider-next" aria-label="Next image">›</button>
+          </div>
+          <div class="community-slider-dots"></div>
           <p class="community-caption">Monster truck sponsorship</p>
         </div>
       </div>
@@ -161,33 +181,33 @@
       });
     });
 
-    // Little League slider
-    (function() {
-      const slider = document.getElementById('littleLeagueSlider');
-      const prevBtn = document.querySelector('.community-slider-prev');
-      const nextBtn = document.querySelector('.community-slider-next');
-      const dotsContainer = document.querySelector('.community-slider-dots');
+    // Community sliders (Little League, Monster truck, etc.)
+    document.querySelectorAll('.community-item.community-slider').forEach(function(communityItem) {
+      const slider = communityItem.querySelector('.community-slider-track');
+      const prevBtn = communityItem.querySelector('.community-slider-prev');
+      const nextBtn = communityItem.querySelector('.community-slider-next');
+      const dotsContainer = communityItem.querySelector('.community-slider-dots');
       
-      if (!slider) return;
+      if (!slider || !dotsContainer) return;
       
       const images = slider.querySelectorAll('img');
       const totalImages = images.length;
       let currentIndex = 0;
       
       // Create dots
-      images.forEach((_, index) => {
+      images.forEach(function(_, index) {
         const dot = document.createElement('button');
         dot.className = 'community-slider-dot' + (index === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', `Go to image ${index + 1}`);
-        dot.addEventListener('click', () => goToSlide(index));
+        dot.setAttribute('aria-label', 'Go to image ' + (index + 1));
+        dot.addEventListener('click', function() { goToSlide(index); });
         dotsContainer.appendChild(dot);
       });
       
       const dots = dotsContainer.querySelectorAll('.community-slider-dot');
       
       function updateSlider() {
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, i) => {
+        slider.style.transform = 'translateX(-' + currentIndex * 100 + '%)';
+        dots.forEach(function(dot, i) {
           dot.classList.toggle('active', i === currentIndex);
         });
       }
@@ -209,7 +229,7 @@
       
       if (prevBtn) prevBtn.addEventListener('click', prevSlide);
       if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    })();
+    });
   </script>
 </body>
 </html>
