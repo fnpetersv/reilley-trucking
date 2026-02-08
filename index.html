@@ -232,8 +232,10 @@
       </div>
       <form class="form" action="https://formsubmit.co/dispatch@reilleytrucking.com" method="POST">
         <input type="hidden" name="_subject" value="New Quote Request - Reilley Trucking">
-        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_cc" value="nellyp7@aol.com">
+        <!-- Honeypot: leave empty; bots that fill it get rejected -->
+        <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="_next" id="next-url-quote" value="">
         <div class="form-row">
           <div class="form-field">
