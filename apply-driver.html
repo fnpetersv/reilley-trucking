@@ -554,6 +554,27 @@
               <textarea id="suspended-license-explain" name="suspended-license-explain" rows="2"></textarea>
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Have you ever been convicted of a felony? <span style="color: var(--red);">*</span></label>
+              <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                <label style="display: flex; align-items: center; font-weight: normal;">
+                  <input type="radio" name="felony-conviction" value="Yes" style="margin-right: 0.5rem;" required /> Yes
+                </label>
+                <label style="display: flex; align-items: center; font-weight: normal;">
+                  <input type="radio" name="felony-conviction" value="No" style="margin-right: 0.5rem;" required /> No
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field full">
+              <label for="felony-details">If yes, please provide dates and the nature of the offense(s)</label>
+              <textarea id="felony-details" name="felony-details" rows="3"></textarea>
+            </div>
+          </div>
         </div>
         
         <!-- Employment Record -->
@@ -826,7 +847,7 @@
               <input type="date" id="auth-date" name="auth-date" required />
             </div>
             <div class="form-field">
-              <label for="auth-signature">DIGITALLY SIGN BY TYPING FULL LEGAL NAME <span style="color: var(--red);">*</span></label>
+              <label for="auth-signature">SIGN BY TYPING FULL LEGAL NAME <span style="color: var(--red);">*</span></label>
               <input type="text" id="auth-signature" name="auth-signature" required />
             </div>
           </div>
@@ -843,7 +864,7 @@
               <input type="date" id="cert-date" name="cert-date" required />
             </div>
             <div class="form-field">
-              <label for="cert-signature">DIGITALLY SIGN BY TYPING FULL LEGAL NAME <span style="color: var(--red);">*</span></label>
+              <label for="cert-signature">SIGN BY TYPING FULL LEGAL NAME <span style="color: var(--red);">*</span></label>
               <input type="text" id="cert-signature" name="cert-signature" required />
             </div>
           </div>
