@@ -202,6 +202,14 @@ body {
   max-width: 700px;
   margin: 0 0 1rem;
 }
+.hero .hero-lead {
+  max-width: none;
+}
+@media (min-width: 768px) {
+  .hero .hero-lead {
+    white-space: nowrap;
+  }
+}
 .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
 /* Badges */
@@ -383,7 +391,7 @@ body {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 0;
 }
