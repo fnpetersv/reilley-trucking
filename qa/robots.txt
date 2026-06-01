@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Prevent crawling of form and utility pages
+Disallow: /apply-driver
+Disallow: /apply-fleet-mechanic
+Disallow: /apply-office
+Disallow: /apply-shop-maintenance
+Disallow: /thank-you
+
+# Point Google to your sitemap
+Sitemap: https://www.reilleytrucking.com/sitemap.xml
