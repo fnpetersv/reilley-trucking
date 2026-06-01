@@ -279,7 +279,7 @@ body {
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 /* Careers cards - 4 columns, smaller size */
 .careers-cards {
