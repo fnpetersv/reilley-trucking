@@ -10,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- GFL transition announcement (homepage only) -->
+  <div class="announcement-banner" id="announcement-banner" role="region" aria-label="Service update">
+    <div class="announcement-banner__inner">
+      <p class="announcement-banner__text">
+        Roll-off services have transitioned to GFL Environmental as of June 1, 2026.
+        <a href="https://gflenv.com/welcome-reilley-customers/" class="announcement-banner__link" target="_blank" rel="noopener noreferrer">Learn more →</a>
+      </p>
+      <button type="button" class="announcement-banner__dismiss" aria-label="Dismiss announcement">×</button>
+    </div>
+  </div>
+
   <!-- Top bar -->
   <div class="topbar">
     <div class="container">
@@ -331,6 +342,16 @@
   </footer>
 
   <script>
+    // GFL announcement banner (dismiss until refresh or next visit)
+    (function () {
+      const banner = document.getElementById('announcement-banner');
+      if (!banner) return;
+
+      banner.querySelector('.announcement-banner__dismiss')?.addEventListener('click', () => {
+        banner.classList.add('is-hidden');
+      });
+    })();
+
     // Set redirect URL for form submission
     document.getElementById('next-url-quote').value = window.location.origin + '/thank-you.html';
     
