@@ -82,86 +82,6 @@ body {
   color: var(--white);
 }
 
-/* Homepage announcement banner */
-.announcement-banner {
-  width: 100%;
-  background: #e0e0e0;
-  color: #333;
-  padding: 12px 0;
-  border-bottom: 1px solid #ccc;
-  font-family: inherit;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.announcement-banner.is-hidden {
-  display: none;
-}
-
-.announcement-banner__inner {
-  position: relative;
-  width: min(1100px, 92%);
-  margin: 0 auto;
-  padding: 0 2.75rem 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.announcement-banner__text {
-  margin: 0;
-  text-align: center;
-}
-
-.announcement-banner__link {
-  color: var(--red);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.announcement-banner__link:hover {
-  color: var(--red-light);
-}
-
-.announcement-banner__dismiss {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0;
-  padding: 0.25rem 0.5rem;
-  background: none;
-  border: none;
-  color: var(--muted);
-  font-size: 1.35rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.announcement-banner__dismiss:hover {
-  color: #333;
-}
-
-@media (max-width: 640px) {
-  .announcement-banner__inner {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 2.5rem 0 0.5rem;
-    gap: 0.25rem;
-  }
-
-  .announcement-banner__text {
-    text-align: center;
-    padding-right: 1.5rem;
-  }
-
-  .announcement-banner__dismiss {
-    top: 0;
-    transform: none;
-  }
-}
-
 /* Top bar */
 .topbar {
   background: var(--red);
@@ -282,14 +202,6 @@ body {
   max-width: 700px;
   margin: 0 0 1rem;
 }
-.hero .hero-lead {
-  max-width: none;
-}
-@media (min-width: 768px) {
-  .hero .hero-lead {
-    white-space: nowrap;
-  }
-}
 .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
 /* Badges */
@@ -367,7 +279,7 @@ body {
 .cards {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 /* Careers cards - 4 columns, smaller size */
 .careers-cards {
@@ -471,7 +383,7 @@ body {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 0;
 }

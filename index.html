@@ -3,24 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Reilley Trucking provides reliable dump trucking, heavy equipment hauling, and commercial transport services across Northeast Indiana. Request a quote today.">
-  <title>Reilley Trucking | Dump Trucking & Heavy Haul</title>
+  <meta name="description" content="Reilley Trucking provides reliable dump trucking, roll-off containers, heavy equipment hauling, and commercial transport services across Northeast Indiana. Request a quote today.">
+  <title>Reilley Trucking | Dump Trucking, Roll-Offs, Heavy Haul</title>
   <link rel="icon" href="assets/R favicon.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- GFL transition announcement (homepage only) -->
-  <div class="announcement-banner" id="announcement-banner" role="region" aria-label="Service update">
-    <div class="announcement-banner__inner">
-      <p class="announcement-banner__text">
-        Roll-off services have transitioned to GFL Environmental as of June 1, 2026.
-        <a href="https://gflenv.com/welcome-reilley-customers/" class="announcement-banner__link" target="_blank" rel="noopener noreferrer">Learn more →</a>
-      </p>
-      <button type="button" class="announcement-banner__dismiss" aria-label="Dismiss announcement">×</button>
-    </div>
-  </div>
-
   <!-- Top bar -->
   <div class="topbar">
     <div class="container">
@@ -57,7 +46,7 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1>Reliable. Responsive. Reilley Trucking.</h1>
-      <p>Dump trucking and heavy equipment hauling — done safely and on time.</p>
+      <p>Dump trucking, roll-off containers, and heavy equipment hauling — done safely and on time.</p>
       <div class="hero-ctas">
         <a href="#quote" class="btn btn-primary">Request a quote</a>
         <a href="careers.html" class="btn btn-light">Join our team</a>
@@ -101,6 +90,19 @@
               <li><strong>Materials:</strong> aggregate, sand, gravel, fill</li>
               <li><strong>Projects:</strong> site prep, roadwork, demo</li>
               <li><strong>Scheduling:</strong> flexible day/night dispatch</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/rolloff.webp" width="707" height="471" loading="lazy" alt="Roll-off containers service">
+          <div class="card-body">
+            <h3>Roll-off boxes</h3>
+            <p>10–40 yard containers for residential, commercial, and industrial jobs with straightforward rules.</p>
+            <ul class="list">
+              <li><strong>Sizes:</strong> 10, 20, 30, 40 yard</li>
+              <li><strong>Accepted:</strong> asphalt, brick, concrete, metal, wood</li>
+              <li><strong>Not accepted:</strong> hazardous waste, batteries, liquids</li>
             </ul>
           </div>
         </article>
@@ -154,6 +156,18 @@
             <div class="testimonial-role">Customer</div>
           </div>
           <div class="testimonial-card">
+            <div class="testimonial-initials">DH</div>
+            <p class="testimonial-text">"Was in a pinch and needed a box ASAP. I am not a big customer but told them who I was and noted that I have used them before. They dropped off a box in less than 24 hrs. Driver was great dropping it off and placed it perfectly in a tight spot. They could have easily overcharged me but price was same as before. Great price, great service, period."</p>
+            <div class="testimonial-author">David Hoverman</div>
+            <div class="testimonial-role">Customer</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-initials">SL</div>
+            <p class="testimonial-text">"Putting in a pool, we had a long fence and deck to tear out. We called and got a Reilley Box. The driver was very courteous and went out of his way to ensure when he dropped the box, our driveway wouldn't get scratched. Again when it was picked up, great care was taken removing the box. The pool got dug and the association wanted the dirt to fill some low spots. Reilley Trucking got a dump truck right out. Same courtesy and care to be sure our sidewalk wasn't damaged. The Association was pleased with the work also. I would highly recommend."</p>
+            <div class="testimonial-author">Steve Ludwiski</div>
+            <div class="testimonial-role">Customer</div>
+          </div>
+          <div class="testimonial-card">
             <div class="testimonial-initials">CK</div>
             <p class="testimonial-text">"These guys are super reliable and they offer competitive and honest rates. I've been able to hire them with such little notice time and time again and they always follow through."</p>
             <div class="testimonial-author">Cody Kraus</div>
@@ -171,6 +185,8 @@
           <button class="dot" data-index="1" aria-label="Show testimonial 2"></button>
           <button class="dot" data-index="2" aria-label="Show testimonial 3"></button>
           <button class="dot" data-index="3" aria-label="Show testimonial 4"></button>
+          <button class="dot" data-index="4" aria-label="Show testimonial 5"></button>
+          <button class="dot" data-index="5" aria-label="Show testimonial 6"></button>
         </div>
       </div>
     </div>
@@ -249,6 +265,7 @@
             <select id="service" name="service" required>
               <option value="" disabled selected>Select a service</option>
               <option>Dump trucking</option>
+              <option>Roll-off boxes</option>
               <option>Heavy equipment hauling</option>
             </select>
           </div>
@@ -342,16 +359,6 @@
   </footer>
 
   <script>
-    // GFL announcement banner (dismiss until refresh or next visit)
-    (function () {
-      const banner = document.getElementById('announcement-banner');
-      if (!banner) return;
-
-      banner.querySelector('.announcement-banner__dismiss')?.addEventListener('click', () => {
-        banner.classList.add('is-hidden');
-      });
-    })();
-
     // Set redirect URL for form submission
     document.getElementById('next-url-quote').value = window.location.origin + '/thank-you.html';
     
