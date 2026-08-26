@@ -1,2 +1,3 @@
-// Placeholder for future interactivity
-console.log("Reilley Trucking site loaded.");
+document.querySelectorAll('.copyright-year').forEach(function (el) {
+  el.textContent = new Date().getFullYear();
+});
